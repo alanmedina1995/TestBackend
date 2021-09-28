@@ -60,24 +60,24 @@ public class CandidatoDAO implements ICandidato{
         }
 
     }
-    @Override
-    public void candidatosXtecnologiaList (String tecnologiaAbuscar){
-        TecnologiaDAO tecnologiaDAO = new TecnologiaDAO();
-        CandidatoXTecnologiaDAO candidatoXTecnologiaDAO = new CandidatoXTecnologiaDAO();
-
-        List<Tecnologia>tecnologias = (List<Tecnologia>) tecnologiaDAO.findByNombre(tecnologiaAbuscar);
-        if(tecnologias != null){
-            for(Tecnologia tecnologia: tecnologias){
-                CandidatoXTecnologia candidatoXTecnologia = new CandidatoXTecnologia();
-                Candidato candidato = new Candidato();
-                candidatoXTecnologia = candidatoXTecnologiaDAO.findByIdTecnologia(tecnologia.getId());
-                candidato = this.findById(candidatoXTecnologia.getCandidato().getId());
-                System.out.println(tecnologia.toString() + candidatoXTecnologia.toString() + candidato.toString());
-            }
-        }else{
-            System.out.println("No se ha encontrado la tecnologia deseada");
-        }
-
-    }
+//    @Override
+//    public void candidatosXtecnologiaList (String tecnologiaAbuscar){
+//        TecnologiaDAO tecnologiaDAO = new TecnologiaDAO();
+//        CandidatoXTecnologiaDAO candidatoXTecnologiaDAO = new CandidatoXTecnologiaDAO();
+//
+//        List<Tecnologia>tecnologias = (List<Tecnologia>) tecnologiaDAO.findByNombre(tecnologiaAbuscar);
+//        if(tecnologias != null){
+//            for(Tecnologia tecnologia: tecnologias){
+//                CandidatoXTecnologia candidatoXTecnologia = new CandidatoXTecnologia();
+//                Candidato candidato = new Candidato();
+//                candidatoXTecnologia = candidatoXTecnologiaDAO.findByIdTecnologia(tecnologia.getId());
+//                candidato = this.findById(candidatoXTecnologia.getCandidato().getId());
+//                System.out.println(tecnologia.toString() + candidatoXTecnologia.toString() + candidato.toString());
+//            }
+//        }else{
+//            System.out.println("No se ha encontrado la tecnologia deseada");
+//        }
+//
+//    }
 
 }

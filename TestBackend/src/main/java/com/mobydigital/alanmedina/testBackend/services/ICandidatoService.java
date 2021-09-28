@@ -17,7 +17,7 @@ public interface ICandidatoService {
 
     public void agregarCandidatos(Candidato candidato, List<Tecnologia>tecnologias, int anosExperiencia);
 
-    public void candidatosXtecnologiaList (String tecnologiaAbuscar);
+   // public void candidatosXtecnologiaList (String tecnologiaAbuscar);
 
 
 }

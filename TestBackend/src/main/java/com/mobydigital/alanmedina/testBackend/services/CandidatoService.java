@@ -42,8 +42,8 @@ public class CandidatoService implements ICandidatoService{
         candidatoDAO.agregarCandidatos(candidato, tecnologias, anosExperiencia);
     }
 
-    @Override
-    public void candidatosXtecnologiaList(String tecnologiaAbuscar) {
-        candidatoDAO.candidatosXtecnologiaList(tecnologiaAbuscar);
-    }
+//    @Override
+//    public void candidatosXtecnologiaList(String tecnologiaAbuscar) {
+//        candidatoDAO.candidatosXtecnologiaList(tecnologiaAbuscar);
+//    }
 }
