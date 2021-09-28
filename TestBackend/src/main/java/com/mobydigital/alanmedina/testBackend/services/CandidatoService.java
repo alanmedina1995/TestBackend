@@ -3,11 +3,12 @@ package com.mobydigital.alanmedina.testBackend.services;
 import com.mobydigital.alanmedina.testBackend.models.entities.Candidato;
 import com.mobydigital.alanmedina.testBackend.models.entities.Tecnologia;
 import com.mobydigital.alanmedina.testBackend.repository.CandidatoDAO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Slf4j
 @Service
 public class CandidatoService implements ICandidatoService{
 
@@ -25,6 +26,7 @@ public class CandidatoService implements ICandidatoService{
     public Candidato findById(int id) {
         Candidato candidato = candidatoDAO.findById(id);
         if(candidato == null){
+            log.error("La lista se encuentra vacía");
             throw new RuntimeException("No se encuentra enl candidato id - " + id);
         }
         return candidato;

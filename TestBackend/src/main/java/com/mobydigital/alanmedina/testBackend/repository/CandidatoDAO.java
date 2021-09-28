@@ -3,15 +3,13 @@ package com.mobydigital.alanmedina.testBackend.repository;
 import com.mobydigital.alanmedina.testBackend.models.entities.Candidato;
 import com.mobydigital.alanmedina.testBackend.models.entities.CandidatoXTecnologia;
 import com.mobydigital.alanmedina.testBackend.models.entities.Tecnologia;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 
 @Repository
 @Transactional

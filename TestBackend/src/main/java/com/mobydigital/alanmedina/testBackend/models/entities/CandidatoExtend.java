@@ -2,6 +2,7 @@ package com.mobydigital.alanmedina.testBackend.models.entities;
 
 import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 @Builder
 @NoArgsConstructor
@@ -13,6 +14,14 @@ public class CandidatoExtend extends Candidato{
     @Getter
     @Setter
     private int anosExperiencia;
+
+
+    @Builder
+    public CandidatoExtend(int id, String nombre, String apellido, String tipoDocumento, int numeroDocumento, Date fechaNacimiento , List<Tecnologia>tecnologias, int anosExperiencia){
+        super(id,nombre,apellido,tipoDocumento,numeroDocumento,fechaNacimiento);
+        this.tecnologias = tecnologias;
+        this.anosExperiencia = anosExperiencia;
+    }
 
 
     public List<Tecnologia> getTecnologias() {
