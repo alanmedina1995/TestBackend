@@ -24,6 +24,9 @@ public class CandidatoService implements ICandidatoService{
     @Override
     public Candidato findById(int id) {
         Candidato candidato = candidatoDAO.findById(id);
+        if(candidato == null){
+            throw new RuntimeException("No se encuentra enl candidato id - " + id);
+        }
         return candidato;
     }
 

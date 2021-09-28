@@ -29,5 +29,5 @@ CREATE TABLE candidatosXtecnologias (
                                         FOREIGN KEY (idTecnologia) REFERENCES tecnologias(id)
 );
 
-@
+
 

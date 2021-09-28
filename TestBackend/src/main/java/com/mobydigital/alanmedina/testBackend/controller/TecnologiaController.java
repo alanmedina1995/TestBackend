@@ -22,10 +22,6 @@ public class TecnologiaController {
     @GetMapping("api/tecnologias/{tecnologiaId}")
     public Tecnologia findById(@PathVariable int tecnologiaId){
         Tecnologia tecnologia = tecnologiaService.findById(tecnologiaId);
-
-        if(tecnologia == null){
-            throw new RuntimeException("No se encuentra la tecnologia id - " + tecnologiaId);
-        }
         return tecnologia;
 
     }
@@ -39,9 +35,6 @@ public class TecnologiaController {
     @DeleteMapping("api/tecnologias/{tecnologiaId}")
     public String deleteTecnologia(@PathVariable int tecnologiaId){
         Tecnologia tecnologia = tecnologiaService.findById(tecnologiaId);
-        if(tecnologia == null){
-            throw new RuntimeException("La tecnologia id no fue encontrado  -" + tecnologiaId);
-        }
         tecnologiaService.deleteById(tecnologiaId);
         return "Fue eliminada la tecnologia id - " + tecnologiaId;
     }

@@ -14,6 +14,7 @@ public class CandidatoExtend extends Candidato{
     @Setter
     private int anosExperiencia;
 
+
     public List<Tecnologia> getTecnologias() {
         return tecnologias;
     }

@@ -2,6 +2,7 @@ package com.mobydigital.alanmedina.testBackend.controller;
 
 
 import com.mobydigital.alanmedina.testBackend.models.entities.Candidato;
+import com.mobydigital.alanmedina.testBackend.models.exceptions.EmptyListException;
 import com.mobydigital.alanmedina.testBackend.services.CandidatoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +23,7 @@ public class CandidatoController {
     @GetMapping("api/candidato/{candidatoId}")
     public Candidato findById(@PathVariable int candidatoId){
         Candidato candidato = candidatoService.findById(candidatoId);
-
-        if(candidato == null){
-            throw new RuntimeException("No se encuentra enl candidato id - " + candidatoId);
-        }
         return candidato;
-
     }
 
     @PostMapping("api/candidatos")
@@ -39,9 +35,6 @@ public class CandidatoController {
     @DeleteMapping("api/candidatos/{candidatoId}")
     public String deleteCandidato(@PathVariable int candidatoId){
         Candidato candidato = candidatoService.findById(candidatoId);
-        if(candidato == null){
-            throw new RuntimeException("El candidato id no fue encontrado  -" + candidatoId);
-        }
         candidatoService.deleteById(candidatoId);
         return "Fue eliminado el candidato id - " + candidatoId;
     }
