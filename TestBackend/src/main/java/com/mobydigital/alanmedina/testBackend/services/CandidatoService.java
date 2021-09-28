@@ -1,6 +1,7 @@
 package com.mobydigital.alanmedina.testBackend.services;
 
 import com.mobydigital.alanmedina.testBackend.models.entities.Candidato;
+import com.mobydigital.alanmedina.testBackend.models.entities.Tecnologia;
 import com.mobydigital.alanmedina.testBackend.repository.CandidatoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,15 @@ public class CandidatoService implements ICandidatoService{
     @Override
     public void deleteById(int id) {
         candidatoDAO.deleteById(id);
+    }
+
+    @Override
+    public void agregarCandidatos(Candidato candidato, List<Tecnologia> tecnologias, int anosExperiencia) {
+        candidatoDAO.agregarCandidatos(candidato, tecnologias, anosExperiencia);
+    }
+
+    @Override
+    public void candidatosXtecnologiaList(String tecnologiaAbuscar) {
+        candidatoDAO.candidatosXtecnologiaList(tecnologiaAbuscar);
     }
 }

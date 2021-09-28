@@ -54,8 +54,10 @@ public class TecnologiaDAO implements ITecnologia {
         entityManager.remove(tecnologia);
     }
 
-//    @Override
-//    public void agregarTecnologia() {
-//
-//    }
+    public Tecnologia findByNombre(String nombre){
+        String aBuscar = nombre.toLowerCase();
+        String query = "FROM Tecnologia t WHERE t.nombre LIKE aBuscar ";
+        return (Tecnologia) entityManager.createQuery(query).getResultList();
+    }
+
 }
