@@ -22,6 +22,9 @@ public class TecnologiaService implements ITecnologiaService{
     @Override
     public Tecnologia findById(int id) {
         Tecnologia tecnologia = tecnologiaDAO.findById(id);
+        if(tecnologia == null){
+            throw new RuntimeException("No se encuentra la tecnologia id - " + id);
+        }
         return tecnologia;
     }
 

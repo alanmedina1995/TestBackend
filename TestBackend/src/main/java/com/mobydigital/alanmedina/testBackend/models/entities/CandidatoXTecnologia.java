@@ -28,4 +28,8 @@ public class CandidatoXTecnologia {
     @JoinColumn(name = "idTecnologia", referencedColumnName = "id")
     @ManyToOne
     private Tecnologia tecnologia;
+
+    @Column(name = "anosExperiencia")
+    private int anosExperiencia;
+
 }
